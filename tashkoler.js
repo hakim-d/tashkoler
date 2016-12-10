@@ -14,8 +14,8 @@ var tashkoler = (function (){
     document.getElementsByTagName('head')[0].appendChild(style);
 
     // Define the DOM target to apply the colored tashkeel.
-    var target = document.querySelector(target);
-    var text = document.querySelector(target).html();
+    var target = document.querySelector(' + target + ');
+    var text = document.querySelector(' + target + ').html();
     text = text.replace(/ٌ|ّ|ٍ|ُ|َ|ِ|ً/gi, function checkStr(x,y){
       return "&zwj;<span class='tashkoler'>"+x+"</span>&zwj;";
     });
@@ -26,7 +26,7 @@ var tashkoler = (function (){
   }
   
   return {
-		harakat: harakat
-	};
+    harakat: harakat
+  };
   
 })();
