@@ -26,7 +26,7 @@ var tashkoler = (function (){
   }
   
   return {
-		init: harakat
+		harakat: harakat
 	};
   
 })();
