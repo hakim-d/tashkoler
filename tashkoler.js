@@ -15,7 +15,7 @@ var tashkoler = (function (){
 
     // Define the DOM target to apply the colored tashkeel.
     var bind = document.querySelector(target);
-    var text = document.querySelector(target).html();
+    var text = document.querySelector(target).innerHTML;
     text = text.replace(/ٌ|ّ|ٍ|ُ|َ|ِ|ً/gi, function checkStr(x,y){
       return "&zwj;<span class='tashkoler'>"+x+"</span>&zwj;";
     });
