@@ -22,7 +22,7 @@ var tashkoler = (function (){
     text = text.replace(/&zwj; /gi, function checkStr(x) {  console.log("+");return " ";});
 
     // Apply the colored taskeel.
-    bind.html(text);
+    bind.innerHTML(text);
   }
   
   return {
