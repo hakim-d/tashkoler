@@ -6,7 +6,7 @@
 
 var tashkoler = (function (){
 
-  function harakat ( target = "p", color = "#0FF", size = "1.9em" ) {
+  function harakat ( target = "p", color = "#0FF", size = "1em" ) {
     // Create the tashkeel styles CSS class (.tashkoler)
     var style = document.createElement('style');
     style.type = 'text/css';
