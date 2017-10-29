@@ -16,11 +16,12 @@ var tashkoler = (function (){
     // Define the DOM target to apply the colored tashkeel.
     var bind = document.querySelector(target);
     bind.className += " tashkoler";
+    var join;
     var text = document.querySelector(target).innerHTML;
     text = text.replace(/ٌ|ّ|ٍ|ُ|َ|ِ|ً/gi, function checkStr(x,y){
-      return "&zwj;<haraka>"+x+"</haraka>&zwj;";
+      join = (text.charAt(y+1) != " " && text.charAt(y-1) != " ") ? "&zwj;" : "";
+      return join + "<haraka>" + x + "</haraka>" + join;
     });
-    text = text.replace(/&zwj; /gi, function checkStr(x) {  console.log("+");return " ";});
 
     // Apply the colored taskeel.
     bind.innerHTML = text;
