@@ -25,14 +25,14 @@ var tashkoler = (function (){
     // Find all the harakat and wrap each one of them with <haraka></haraka>
     text = text.replace(/ٌ|ّ|ٍ|ُ|َ|ِ|ً/gi, function wrapHaraka(x,y){
       /*
-        x: the harakat
+        x: the haraka
         y: position of the haraka in the text
-        Wrapping the harakat with the tags, breaks the arabic letters joints
-        when the harakat is in the middle of a word (no space after or before: y+1 and y-1)
+        Wrapping the haraka with a tag, breaks the letters joiners when the haraka
+        is in the middle of a word (no space after or before: y+1 and y-1)
         so for this case, this line adds a zero width joiner (&zwj;)
         */
       join = (text.charAt(y+1) != " " && text.charAt(y-1) != " ") ? "&zwj;" : "";
-      // Wrap the harakat and add a zero width joiner if needed
+      // Wrap the haraka and add a zero width joiner if needed
       return join + "<haraka>" + x + "</haraka>" + join;
     });
 
